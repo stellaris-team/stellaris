@@ -1,0 +1,64 @@
+// Typography
+$family-sans-serif: "Maven Pro", sans-serif;
+$family-monospace: "Ubuntu Mono", monospace;
+
+// Colors
+$blue: #2196f3;
+$indigo: #7289da;
+$purple: #bd93f9;
+$pink: #ff79c6;
+$red: #ff5555;
+$orange: #ffb86c;
+$yellow: #f1fa8c;
+$green: #50fa7b;
+$teal: #4dc0b5;
+$cyan: #8be9fd;
+
+$white: #f8f8f2;
+$black: #282a36;
+$dark-gray: #44475a;
+$light-gray: #6272a4;
+
+// Body
+$body-background-color: $black;
+
+$primary: $purple;
+$info: $indigo;
+$success: $green;
+$warning: $orange;
+$danger: $red;
+$light: $white;
+$dark: $dark-gray;
+$background: $black;
+$text: $white;
+$text-strong: $white;
+$label-color: $white;
+
+$navbar-dropdown-background-color: $dark-gray;
+$navbar-dropdown-item-active-background-color: $dark-gray;
+$navbar-dropdown-border-top: 2px solid $dark-gray;
+
+$notification-radius: 0;
+
+$card-background-color: $light-gray;
+$card-color: $white;
+
+// tables
+$table-color: $white;
+$table-background-color: $light-gray;
+$table-row-hover-background-color: $dark-gray;
+
+// box
+$box-background-color: $light-gray;
+$box-color: $white;
+
+// forms
+$input-color: $white;
+$input-background-color: $dark-gray;
+$input-border-color: $light-gray;
+
+// menu
+$menu-item-active-background-color: $primary;
+
+// footer
+$footer-background-color: $dark;
