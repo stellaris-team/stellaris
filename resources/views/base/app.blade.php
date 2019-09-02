@@ -6,7 +6,7 @@
         <title>@yield('page.title') | {{ config('app.name') }}</title>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <script src="{{ asset('js/app.js') }}"></script>
-        <script src="https://kit.fontawesome.com/ec62ff0996.js"></script>
+        <script src="https://kit.fontawesome.com/{{ env('FA_KIT_ID') }}.js"></script>
     </head>
     <body>
         @yield('page.content')
@@ -18,7 +18,7 @@
                         <div class="level-item">
                             <p>
                                 <span class="icon"><i class="fad fa-meteor fa-2x"></i></span><br>
-                                &copy; 2019 Stellaris; Stellaris created by <a href="https://dgtl.dev" target="_blank">Zack Devine</a> and all of its <a href="https://github.com/stellaris-team/stellaris" target="_blank">awesome contributors</a>.<br>
+                                &copy; 2019 Stellaris; Stellaris created by <a href="https://dgtl.dev" target="_blank">Zack Devine</a> and all of its <a href="https://github.com/stellaris-team/stellaris/graphs/contributors" target="_blank">awesome contributors</a>.<br>
                                 Stellaris is <a href="https://github.com/stellaris-team/stellaris" target="_blank">open-source software</a>! Check us out on GitHub and consider supporting us!
                             </p>
                         </div>
