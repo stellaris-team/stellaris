@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item" href="{{ route('overview') }}">
-                <span class="icon"><i class="fad fa-meteor"></i></span>
+                <span class="icon"><i class="{{ faStyle() }} fa-meteor"></i></span>
                 &nbsp;&nbsp;{{ config('app.name') }}
             </a>
         </div>
@@ -15,7 +15,7 @@
                     <div class="navbar-dropdown">
                         <div class="navbar-divider"></div>
                         <a href="{{ route('logout') }}" class="navbar-item">
-                            <span class="icon"><i class="fad fa-power-off"></i></span>
+                            <span class="icon"><i class="{{ faStyle() }} fa-power-off"></i></span>
                             <span>Logout</span>
                         </a>
                     </div>

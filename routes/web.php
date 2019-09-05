@@ -15,10 +15,25 @@
 Route::prefix('admin')->group(function () {
     // Administration group
     Route::get('/', 'AdminController@overview')->name('admin.overview');
+
     // Configuration group
-    Route::get('app', 'AdminController@overview')->name('admin.app_settings');
-    Route::get('groups', 'AdminController@overview')->name('admin.groups');
-    Route::get('items', 'AdminController@overview')->name('admin.items');
+
+    Route::prefix('app')->group(function () {
+        Route::get('/', 'AdminController@app')->name('admin.app');
+        Route::post('update', 'AdminController@updateAppSettings')->name('admin.app.update');
+    });
+
+    Route::prefix('groups')->group(function () {
+        Route::get('/', 'AdminController@groups')->name('admin.groups');
+        Route::post('add', 'AdminController@addGroup')->name('admin.groups.add');
+    });
+
+    Route::prefix('items')->group(function () {
+        Route::get('/', 'AdminController@items')->name('admin.items');
+        Route::get('add', 'AdminController@addItem')->name('admin.items.add');
+        Route::post('add', 'AdminController@postAddItem')->name('admin.items.add');
+    });
+
     // Authentication group
     Route::get('users', 'AdminController@users')->name('admin.users');
 });

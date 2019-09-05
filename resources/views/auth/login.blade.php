@@ -15,13 +15,13 @@
                         <div class="field">
                             <div class="control has-icons-left">
                                 <input type="email" name="email" class="input" placeholder="Email address">
-                                <span class="icon is-pulled-left"><i class="fad fa-id-badge"></i></span>
+                                <span class="icon is-pulled-left"><i class="{{ faStyle() }} fa-id-badge"></i></span>
                             </div>
                         </div>
                         <div class="field">
                             <div class="control has-icons-left">
                                 <input type="password" name="password" class="input" placeholder="Password">
-                                <span class="icon is-pulled-left"><i class="fad fa-lock"></i></span>
+                                <span class="icon is-pulled-left"><i class="{{ faStyle() }} fa-lock"></i></span>
                             </div>
                         </div>
                         <div class="field">

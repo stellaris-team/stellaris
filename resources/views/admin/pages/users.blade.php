@@ -9,7 +9,7 @@
     <div class="notification is-primary">
         <article class="media">
             <figure class="media-left">
-                <p><i class="fad fa-exclamation-triangle fa-4x"></i></p>
+                <p><i class="{{ faStyle() }} fa-exclamation-triangle fa-4x"></i></p>
             </figure>
             <div class="media-content">
                 <p><strong>Note</strong></p>

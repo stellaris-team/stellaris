@@ -52,7 +52,8 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'base_url' => env('APP_BASE_URL', 'localhost'),
+    'url' => env('APP_URL', 'http://' . config('app.base_url')),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -226,6 +227,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+    ],
+
+    'fa' => [
+        'pro' => env('FA_PRO', false),
+        'kit_id' => env('FA_KIT_ID', 'd3e0e1cdd7'),
     ],
 
 ];
