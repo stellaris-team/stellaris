@@ -16,9 +16,9 @@
             <span class="icon"><i class="{{ faStyle() }} fa-layer-group"></i></span>
             <span>Groups</span>
         </a></li>
-        <li><a href="{{ route('admin.items') }}" class="{{ Route::is('admin.items') ? 'is-active' : '' }}">
+        <li><a href="{{ route('admin.modules') }}" class="{{ Route::is('admin.modules') ? 'is-active' : '' }}">
             <span class="icon"><i class="{{ faStyle() }} fa-stream"></i></span>
-            <span>Items</span>
+            <span>Modules</span>
         </a></li>
     </ul>
     <p class="menu-label">Authentication</p>

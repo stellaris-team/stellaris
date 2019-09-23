@@ -1,3 +1,4 @@
+@php use App\Group; use App\Module; @endphp
 @extends ('base.app')
 @section ('page.title', 'Overview')
 
@@ -18,5 +19,40 @@
             </div>
         </div>
     </section>
+
+    @foreach (Group::orderBy('order', 'desc')->get() as $group)
+        <section class="section">
+            <div class="container">
+                <div class="notification is-dark">
+                    <nav class="level {{ $group->getStatusTextColor() }}">
+                        <div class="level-left">
+                            <div class="level-item">{{ $group->name }}</div>
+                        </div>
+                        <div class="level-right">
+                            <div class="level-item">{{ $group->getStatusInfo() }}</div>
+                            <div class="level-item">
+                                <span class="icon"><i class="{{ faStyle() }} {{ $group->getStatusIcon() }} fa-2x"></i></span>
+                            </div>
+                        </div>
+                    </nav>
+                    @foreach (Module::where('group', $group->id)->orderBy('order', 'desc')->get() as $module)
+                        <div class="notification {{ $module->getStatusColor() }}">
+                            <nav class="level">
+                                <div class="level-left">
+                                    <div class="level-item">{{ $module->name }}</div>
+                                </div>
+                                <div class="level-right">
+                                    <div class="level-item">{{ $module->getStatusInfo() }}</div>
+                                    <div class="level-item">
+                                        <span class="icon"><i class="{{ faStyle() }} {{ $module->getStatusIcon() }} fa-lg"></i></span>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endforeach
 
 @endsection

@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Group extends Model
+class Module extends Model
 {
-    public $fillable = [ 'name', 'uuid', 'status', 'order' ];
+    public $fillable = [ 'uuid', 'name', 'group', 'status', 'order', 'ping', 'ping_url' ];
 
     public function getStatusColor ()
     {
@@ -58,14 +58,14 @@ class Group extends Model
 
     public static function getCurrentHighestOrder()
     {
-        if (count(Group::all()) == 0) return 0;
-        else return Group::orderBy('order', 'desc')->first()->order;
+        if (count(Module::all()) == 0) return 0;
+        else return Module::orderBy('order', 'desc')->first()->order;
     }
 
     public static function getNextOrderIndex()
     {
-        if (count(Group::all()) == 0) return 0;
-        else return Group::getCurrentHighestOrder() + 1;
+        if (count(Module::all()) == 0) return 0;
+        else return Module::getCurrentHighestOrder() + 1;
     }
 
     public function moveUp()
@@ -73,8 +73,8 @@ class Group extends Model
         // Increases order by one
         // Moves previous higher ranked item below
         $curOrder = $this->order;
-        if ($curOrder == Group::getCurrentHighestOrder()) return; // This is already the highest item, so cancel
-        if ($prevItem = Group::where('order', '>', $curOrder)->first())
+        if ($curOrder == Module::getCurrentHighestOrder()) return; // This is already the highest item, so cancel
+        if ($prevItem = Module::where('order', '>', $curOrder)->first())
         {
             $this->order = $prevItem->order;
             $prevItem->order = $curOrder;
@@ -89,7 +89,7 @@ class Group extends Model
         // Moves previous lower ranked item above
         $curOrder = $this->order;
         if ($curOrder == 0) return; // This is already the lowest item, so cancel
-        if ($prevItem = Group::where('order', '<', $curOrder)->first())
+        if ($prevItem = Module::where('order', '<', $curOrder)->first())
         {
             $this->order = $prevItem->order;
             $prevItem->order = $curOrder;
@@ -97,4 +97,5 @@ class Group extends Model
             $this->save();
         }
     }
+
 }

@@ -28,10 +28,12 @@ Route::prefix('admin')->group(function () {
         Route::post('add', 'AdminController@addGroup')->name('admin.groups.add');
     });
 
-    Route::prefix('items')->group(function () {
-        Route::get('/', 'AdminController@items')->name('admin.items');
-        Route::get('add', 'AdminController@addItem')->name('admin.items.add');
-        Route::post('add', 'AdminController@postAddItem')->name('admin.items.add');
+    Route::prefix('modules')->group(function () {
+        Route::get('/', 'AdminController@modules')->name('admin.modules');
+        Route::get('add/{groupId}', 'AdminController@addModule');
+        Route::get('edit/{moduleId}', 'AdminController@editModule');
+        Route::post('add', 'AdminController@postAddModule')->name('admin.modules.add');
+        Route::post('edit', 'AdminController@postEditModule')->name('admin.modules.edit');
     });
 
     // Authentication group

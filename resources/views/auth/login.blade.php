@@ -14,7 +14,7 @@
                         @csrf
                         <div class="field">
                             <div class="control has-icons-left">
-                                <input type="email" name="email" class="input" placeholder="Email address">
+                                <input type="text" name="login" class="input" placeholder="Username or email address">
                                 <span class="icon is-pulled-left"><i class="{{ faStyle() }} fa-id-badge"></i></span>
                             </div>
                         </div>
